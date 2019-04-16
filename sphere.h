@@ -1,0 +1,102 @@
+/////////////////////////////////////////////////////////
+// Fichero sphere.h
+/////////////////////////////////////////////////////////
+#ifndef sphere_h
+#define sphere_h
+#include <cstdlib>
+#include <ctime>
+#include <cmath>
+#include <GL/glut.h>
+typedef struct colores{
+GLfloat azul[4];//adenina
+GLfloat rojo[4];//citosina
+GLfloat amarillo[4];//timina
+GLfloat verde[4];//guanina
+GLfloat blanco[4];
+GLfloat plomo[4];//puente de hidrogeo
+GLfloat celeste[4];
+GLfloat morado[4];//timina
+}colores;
+
+class TSphere
+{
+private:
+  bool dibujo;
+  bool alto;
+  bool compara;
+  //TSphere * par;
+  GLfloat radio,del;
+  GLfloat maxpos;
+  GLfloat pos[3];
+  GLfloat parada[3];
+  GLfloat dir[3];
+  GLfloat speed;
+  GLfloat* color;
+  char tipo;
+  char tipopar;
+public:
+  TSphere(GLfloat maxpos, GLfloat speed,GLfloat r);
+  TSphere(GLfloat maxpos, GLfloat speed, GLfloat r,char c);
+  TSphere(GLfloat r,char c);
+  TSphere(GLfloat r);
+  ~TSphere();
+  void test();
+  void renderBitmapString(float x, float y, float z, void *font);
+  void setdibujo(bool v);
+  void setcolor(char c);
+  void setpos(GLfloat x, GLfloat y, GLfloat z);
+  void setparada(GLfloat x, GLfloat y, GLfloat z, GLfloat s);
+  void setdir();
+  void setdir(GLfloat x, GLfloat y, GLfloat z);
+  void direccion();
+  void setlugar();
+  void setcompara(bool v);
+  void stop(GLfloat x, GLfloat y, GLfloat z, GLfloat s);
+  void link();
+  void render(GLUquadric* g);
+  void render(GLUquadric* g, char c);//hidrogeno
+  //void modifySpeed(float inc);
+  float * getPosv();
+  float getx();
+  bool getparada();
+  char gettipopar();
+};
+/*
+class Polimerasa
+{
+private:
+  bool dibujo;
+  bool compara;
+  GLfloat radiom,radioM;
+  GLfloat pos[3];
+  GLfloat dir[3];
+  GLfloat speed;
+  GLfloat* color;
+  char tipo;
+public:
+  Polimerasa(GLfloat x, GLfloat y, GLfloat z, GLfloat dx,GLfloat dy,GLfloat dz,GLfloat speed, GLfloat rm, GLfloat rM, char c);
+  ~Polimerasa();
+  void avanza();
+  void setpos(GLfloat x, GLfloat y, GLfloat z);
+  void setcompara(bool v);
+  float * getPosv();
+  float getx();
+  bool getparada();
+};
+
+
+
+glPushMatrix();
+  glTranslated(-torstep,0,Radio);
+  glRotatef(90,0.0,1.0,0.0);
+  glutSolidTorus(0.4, 1.0, 28, 28);
+  glPopMatrix();
+  glPushMatrix();
+  glTranslated(torstep,0,-Radio);
+  glRotatef(90,0.0,1.0,0.0);
+  glPopMatrix();
+  torstep-=veltor;
+*/
+
+
+#endif

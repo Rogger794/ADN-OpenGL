@@ -1,2 +1,6 @@
 # ADN-OpenGL
-Simulaciòn de la desnaturalizaciòn de una cadena de ADN.
+Simulaciòn de la transcripciòn de una cadena de ADN. Biologìa Computacional
+
+#### Contribuidores:
+* Cerron Tome, Renzo Elvis
+* Valverde Flores, Rogger Andre
